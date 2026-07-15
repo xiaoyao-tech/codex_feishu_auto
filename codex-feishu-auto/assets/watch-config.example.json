@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "name": "Example AI launch",
+  "slug": "example-ai-launch",
+  "mode": "live-event",
+  "timezone": "Asia/Shanghai",
+  "workspace_dir": "/replace/with/your/state/directory",
+  "window": {
+    "start_at": "2026-01-01 23:00",
+    "end_at": "2026-01-02 03:00"
+  },
+  "schedule": {
+    "normal_minutes": 30,
+    "active_minutes": 2,
+    "closeout_after_no_updates": 3
+  },
+  "feishu": {
+    "doc": "https://example.feishu.cn/wiki/REPLACE_ME",
+    "identity": "user",
+    "read_before_write": true,
+    "verify_after_write": true,
+    "manual_edits_are_authoritative": true
+  },
+  "sources": [
+    {
+      "name": "Official stream",
+      "target": "https://example.com/live",
+      "kind": "url"
+    },
+    {
+      "name": "Official release page",
+      "target": "https://example.com/news",
+      "kind": "url"
+    }
+  ],
+  "commands": {
+    "collect": ""
+  },
+  "capture": {
+    "enabled": true,
+    "platform": "macOS",
+    "browser": "Google Chrome",
+    "interval_seconds": 10,
+    "title_keywords": [
+      "Example AI",
+      "YouTube"
+    ],
+    "exact_duplicate_filter": true
+  }
+}

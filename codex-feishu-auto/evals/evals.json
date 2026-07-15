@@ -1,0 +1,41 @@
+{
+  "skill_name": "codex-feishu-auto",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "今晚有一场海外 AI 发布会，帮我从 23:30 盯到凌晨 03:00。核心阶段每 2 分钟检查一次，抓官方字幕和两家 liveblog，关键图写进我给的飞书 Wiki。直播结束连续三轮没新消息就收官。",
+      "expected_output": "Creates or proposes a real live-event automation with a state directory, source hierarchy, optional separate capture cadence, Feishu read-write-read verification, low-noise rounds, and an explicit stop condition.",
+      "files": [],
+      "expectations": [
+        "The response distinguishes capture cadence from Codex patrol cadence.",
+        "The response reads Feishu before writing and reads it again to verify.",
+        "The response creates state for deduplication and consecutive no-update rounds.",
+        "The response includes closeout and automation cleanup after three no-update rounds."
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "今天值班，半小时扫一次 AI 选题，出现 OpenAI、Anthropic 或 Google 的重大模型/API/价格消息再强提醒，明早 08:50 给我 TOP3，然后停掉。",
+      "expected_output": "Uses topic-duty mode with a 30-minute heartbeat, graded alerts, state and duty log, compact no-signal output, and an 08:50 closeout with TOP1/TOP3 and cleanup.",
+      "files": [],
+      "expectations": [
+        "The response keeps ordinary no-signal patrols short.",
+        "The response stores seen candidates separately from editorial duty-log judgments.",
+        "The response reserves strong alerts for priority-changing signals.",
+        "The response stops normal patrol at closeout and cleans up the automation."
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "每天晚上检查一次服务器上的日报系统：容器、cron、当天 docx、模型主备链、数据库新鲜度和飞书交付。只检查不要修，异常要告诉我证据，别把密钥打出来。",
+      "expected_output": "Uses ops-check mode with read-only commands, layered health facts, production-path verification, secret redaction, and concise evidence-backed reporting.",
+      "files": [],
+      "expectations": [
+        "The response keeps the first pass read-only.",
+        "The response separates host, service, scheduler, artifact, model, data, auth, and delivery health.",
+        "The response verifies the live production path instead of trusting a similarly named local file.",
+        "The response redacts secrets and reports evidence with recommended action."
+      ]
+    }
+  ]
+}
